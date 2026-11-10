@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StockFlow
 
-## Getting Started
+StockFlow is a multi-tenant inventory management app built with Next.js, Prisma,
+and PostgreSQL. Each organization has its own users, inventory, and low-stock
+settings.
 
-First, run the development server:
+## Local development
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Install dependencies with `npm install`.
+2. Set `DATABASE_URL` in `.env` to your PostgreSQL connection URL and
+   `JWT_SECRET` to a random secret with at least 32 characters. Keep `.env`
+   private; never commit it.
+3. Create or update the database schema with `npx prisma db push`.
+4. Start the app with `npm run dev`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Connect this GitHub repository to Vercel and add `DATABASE_URL` (a PostgreSQL
+connection URL) and `JWT_SECRET` (at least 32 characters) to the Vercel project's
+Environment Variables for the environments you deploy. Deployments use the
+PostgreSQL database configured by `DATABASE_URL`; local SQLite files are not
+used for production storage. Pushes to the connected branch trigger a deployment.
 
-## Learn More
+## Useful commands
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — start the development server.
+- `npm run build` — create a production build.
+- `npm run lint` — run ESLint.
+- `npx prisma generate` — regenerate Prisma Client.
+- `npx prisma db push` — synchronize the Prisma schema with the configured
+  database.
