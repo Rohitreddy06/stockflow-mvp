@@ -1,33 +1,51 @@
-# StockFlow
+# StockFlow – MVP Inventory Management System
 
-StockFlow is a multi-tenant inventory management app built with Next.js, Prisma,
-and PostgreSQL. Each organization has its own users, inventory, and low-stock
-settings.
+A multi-tenant inventory management web application built for the Wexa.ai technical assessment. StockFlow enables organizations to track product catalogs, manage stock levels with inline adjustments, configure low-stock alert thresholds, and monitor key inventory metrics from a real-time dashboard.
 
-## Local development
+---
 
-1. Install dependencies with `npm install`.
-2. Set `DATABASE_URL` in `.env` to your PostgreSQL connection URL and
-   `JWT_SECRET` to a random secret with at least 32 characters. Keep `.env`
-   private; never commit it.
-3. Create or update the database schema with `npx prisma db push`.
-4. Start the app with `npm run dev`.
+## 🚀 Live Demo & Links
 
-Open [http://localhost:3000](http://localhost:3000).
+- **Live Deployment:** [https://stockflow-mvp-pkfx.vercel.app](https://stockflow-mvp-pkfx.vercel.app)
+- **GitHub Repository:** [https://github.com/Rohitreddy06/stockflow-mvp](https://github.com/Rohitreddy06/stockflow-mvp)
 
-## Deploy to Vercel
+---
 
-Connect this GitHub repository to Vercel and add `DATABASE_URL` (a PostgreSQL
-connection URL) and `JWT_SECRET` (at least 32 characters) to the Vercel project's
-Environment Variables for the environments you deploy. Deployments use the
-PostgreSQL database configured by `DATABASE_URL`; local SQLite files are not
-used for production storage. Pushes to the connected branch trigger a deployment.
+## 🔐 Demo Credentials
 
-## Useful commands
+Use the following test account credentials to evaluate the live deployment:
 
-- `npm run dev` — start the development server.
-- `npm run build` — create a production build.
-- `npm run lint` — run ESLint.
-- `npx prisma generate` — regenerate Prisma Client.
-- `npx prisma db push` — synchronize the Prisma schema with the configured
-  database.
+- **Email:** `xyz@gmail.com`
+- **Password:** `12345678`
+
+*(You can also register a brand-new organization and user at `/signup`.)*
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js (App Router, TypeScript)
+- **Styling:** Tailwind CSS
+- **Database:** PostgreSQL (Supabase)
+- **ORM:** Prisma
+- **Authentication:** Custom JWT-based session cookies with `bcryptjs` password hashing
+- **Deployment:** Vercel
+
+---
+
+## ✨ Features
+
+- **Multi-Tenant Architecture:** Strict tenant isolation ensuring each organization only views and edits its own inventory.
+- **Product Management:** Complete CRUD operations for products (Name, SKU, Description, Cost Price, Selling Price, and Low-Stock Threshold).
+- **Inline Stock Adjustments:** Quick quantity increment and decrement actions directly from the inventory table.
+- **Dynamic Dashboard:** Real-time summary cards displaying Total SKUs, Total Units on Hand, and an automatic Low-Stock Alerts table.
+- **Organization Settings:** Configurable default low-stock alert threshold applied across the tenant.
+
+---
+
+## 💻 Local Development Setup
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/Rohitreddy06/stockflow-mvp.git](https://github.com/Rohitreddy06/stockflow-mvp.git)
+cd stockflow-mvp
