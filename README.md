@@ -6,7 +6,7 @@ A multi-tenant inventory management web application built for the Wexa.ai techni
 
 ## 🚀 Live Demo & Links
 
-- **Live Deployment:** [https://stockflow-mvp-pkfx.vercel.app](https://stockflow-mvp-pkfx.vercel.app)
+- **Live Deployment:** [https://stockflow-mvp-pkfx.vercel.app](https://stockflow-mvp-ichg.vercel.app)
 - **GitHub Repository:** [https://github.com/Rohitreddy06/stockflow-mvp](https://github.com/Rohitreddy06/stockflow-mvp)
 
 ---
